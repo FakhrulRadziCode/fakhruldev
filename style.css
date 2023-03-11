@@ -1,6 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
+:root {
+  --clr-primary: #f5f9ff;
+  --font-h: black;
+  --cards-clr: white;
+}
+
+.darkmode {
+  --clr-primary: #1f2122;
+  --font-h: white;
+  --cards-clr: #313036;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -9,6 +21,21 @@
 *::after {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  right: 1em;
+  color: var(--foreground);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
 }
 /*
   2. Remove default margin
@@ -63,6 +90,7 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  color: var(--font-h);
 }
 /*
   9. Create a root stacking context
@@ -83,10 +111,11 @@ h6 {
 
 .font-accent {
   font-family: "Righteous", sans-serif;
+  color: var(--font-h);
 }
 
 body {
-  background-color: #f5f9ff;
+  background-color: var(--clr-primary);
 }
 
 /* Utility */
@@ -157,6 +186,7 @@ p {
 
 .icon {
   transition: 0.3s all ease-in-out;
+  color: var(--font-h);
 }
 
 .icon:hover {
@@ -196,7 +226,7 @@ p {
 
 .profile-img {
   max-width: 70%;
-  height: 80%;
+  /* height: 80%; */
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
@@ -235,11 +265,11 @@ p {
 
 .cards {
   --padding: 1rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #ffffff12;
   border-radius: 0.25rem;
   overflow: hidden;
   max-width: 55ch;
-  background: white;
+  background: var(--cards-clr);
 }
 
 .cards:hover {
@@ -299,7 +329,7 @@ p {
 }
 
 .link-cta {
-  background-color: white;
+  background: none;
   border: none;
 }
 
@@ -312,4 +342,5 @@ p {
 footer {
   padding-block: 2.5rem;
   text-align: center;
+  color: var(--font-h);
 }
